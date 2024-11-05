@@ -95,6 +95,7 @@ export class StringCommands {
     return Promise.all(keys.map((key) => this.get(key)));
   }
 
+  //TODO: implement a separate GETDEL command/function & change this delete return type to be void
   async delete(key: string): Promise<boolean> {
     return this._db.remove(key);
   }
