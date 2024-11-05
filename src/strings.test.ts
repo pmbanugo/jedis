@@ -29,20 +29,20 @@ describe("StringCommands", () => {
   test("increment operations", async () => {
     await jedis.strings.set("counter", "10");
 
-    const incr = await jedis.strings.incr("counter");
+    const incr = await jedis.strings.increment("counter");
     expect(incr).toBe(11);
 
-    const incrby = await jedis.strings.incrby("counter", 5);
+    const incrby = await jedis.strings.incrementBy("counter", 5);
     expect(incrby).toBe(16);
   });
 
   test("decrement operations", async () => {
     await jedis.strings.set("counter", "10");
 
-    const decr = await jedis.strings.decr("counter");
+    const decr = await jedis.strings.decrement("counter");
     expect(decr).toBe(9);
 
-    const decrby = await jedis.strings.decrby("counter", 5);
+    const decrby = await jedis.strings.decrementBy("counter", 5);
     expect(decrby).toBe(4);
   });
 
@@ -53,8 +53,8 @@ describe("StringCommands", () => {
       ["key3", "value3"],
     ]);
 
-    await jedis.strings.mset(entries);
-    const values = await jedis.strings.mget("key1", "key2", "key3");
+    await jedis.strings.mSet(entries);
+    const values = await jedis.strings.mGet("key1", "key2", "key3");
     expect(values).toEqual(["value1", "value2", "value3"]);
   });
 
@@ -63,7 +63,7 @@ describe("StringCommands", () => {
     let value = await jedis.strings.get("temp-key");
     expect(value).toBe("temp-value");
 
-    await jedis.strings.del("temp-key");
+    await jedis.strings.delete("temp-key");
     value = await jedis.strings.get("temp-key");
     expect(value).toBeNull();
   });

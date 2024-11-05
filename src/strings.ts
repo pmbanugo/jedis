@@ -50,35 +50,35 @@ export class StringCommands {
     return value.value;
   }
 
-  async incr(key: string): Promise<number> {
+  async increment(key: string): Promise<number> {
     const value = await this.get(key);
     const newValue = (parseInt(value!) || 0) + 1;
     await this.set(key, newValue);
     return newValue;
   }
 
-  async decr(key: string): Promise<number> {
+  async decrement(key: string): Promise<number> {
     const value = await this.get(key);
     const newValue = (parseInt(value!) || 0) - 1;
     await this.set(key, newValue);
     return newValue;
   }
 
-  async incrby(key: string, increment: number): Promise<number> {
+  async incrementBy(key: string, increment: number): Promise<number> {
     const value = await this.get(key);
     const newValue = (parseInt(value!) || 0) + increment;
     await this.set(key, newValue);
     return newValue;
   }
 
-  async decrby(key: string, decrement: number): Promise<number> {
+  async decrementBy(key: string, decrement: number): Promise<number> {
     const value = await this.get(key);
     const newValue = (parseInt(value!) || 0) - decrement;
     await this.set(key, newValue);
     return newValue;
   }
 
-  async mset(entries: Map<string, string | number>): Promise<"OK" | null> {
+  async mSet(entries: Map<string, string | number>): Promise<"OK" | null> {
     if (entries.size === 0) return null;
     const operations = [];
 
@@ -91,11 +91,11 @@ export class StringCommands {
     return "OK";
   }
 
-  async mget(...keys: string[]): Promise<(string | null)[]> {
+  async mGet(...keys: string[]): Promise<(string | null)[]> {
     return Promise.all(keys.map((key) => this.get(key)));
   }
 
-  async del(key: string): Promise<boolean> {
+  async delete(key: string): Promise<boolean> {
     return this._db.remove(key);
   }
 }
