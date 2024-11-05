@@ -22,6 +22,8 @@ It's intended to be used in scenarios where you want to work with Redis-like dat
 
 ## Support
 
-The project is primarily maintained by [me](https://www.linkedin.com/in/pmbanugo/) in my spare time. I'd like to spend more hours to get it to v1, consider supporting me so I can spend more time on it, rather than chasing more clients and dealing with proposals 😉
+For the sake of external validation, please star the repo 💫
+
+The project is primarily maintained by [me](https://www.linkedin.com/in/pmbanugo/) in my spare time. I'd like to spend more hours to get it to v1, consider supporting me so I can spend more time on it, rather than chasing more clients and dealing with proposals 😉.
 
 I'm on [GitHub Sponsors](https://github.com/sponsors/pmbanugo) but my sponsor profile is a bit outdated for now. Reach out on [Twitter](https://twitter.com/p_mbanugo) or [LinkedIn](https://www.linkedin.com/in/pmbanugo/) if you want to talk about it.
