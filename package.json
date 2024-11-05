@@ -1,0 +1,20 @@
+{
+  "name": "@pmbanugo/jedis",
+  "author": "Peter Mbanugo (@pmbanugo)",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "test:watch": "bun test --watch"
+  },
+  "devDependencies": {
+    "@types/node": "22.9.0",
+    "vitest": "^2.1.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "lmdb": "3.1.4"
+  }
+}
