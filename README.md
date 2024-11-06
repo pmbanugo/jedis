@@ -20,6 +20,22 @@ It's intended to be used in scenarios where you want to work with Redis-like dat
 - Not intended to be used as a drop-in replacement for Redis, but the API is closely modeled after Redis.
 - Not intended for use in serverless function/edge environments
 
+## Benchmarks
+
+The benchmark code is in the `benchmark` folder.
+
+I ran this on my M1 MacBook Pro, and the results are as follows:
+
+GET operations:
+
+![GET operation](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bjlz4fkb68uxse8rs39o.png)
+
+SET operations:
+
+![SET operations](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b2qcxegqcarett4dvfyq.png)
+
+Redis is run via Docker and doesn't persist to disk. But there might be better ways to benchmark, I'm just using the current one to get a baseline and keep working towards v1.0.0.
+
 ## Support
 
 For the sake of external validation, please star the repo 💫

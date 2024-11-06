@@ -5,9 +5,6 @@ import { type JedisOptions } from "./types";
 const JEDIS_NO_MEM_INIT = process.env.JEDIS_NO_MEM_INIT
   ? Boolean(process.env.JEDIS_NO_MEM_INIT)
   : undefined;
-const JEDIS_NO_SYNC = process.env.JEDIS_NO_SYNC
-  ? Boolean(process.env.JEDIS_NO_SYNC)
-  : undefined;
 
 export class Jedis {
   public readonly strings: StringCommands;
@@ -20,7 +17,7 @@ export class Jedis {
       compression: options.enableCompression,
       //optional and intentionally hidden for internal exploration.
       noMemInit: JEDIS_NO_MEM_INIT,
-      noSync: JEDIS_NO_SYNC,
+      noSync: options.path === undefined, //don't flush to disk when path is undefined
     });
     this.strings = new StringCommands(this.db);
   }

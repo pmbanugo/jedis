@@ -1,0 +1,11 @@
+export const FIXED_VALUE_VLONG = "LOREM IPSUM, ".repeat(100_000);
+export const FIXED_VALUE_LONG = "LOREM IPSUM, ".repeat(10_000);
+export const FIXED_VALUE_SHORT = "LOREM IPSUM, ".repeat(1_000);
+export const FIXED_VALUE_VSHORT = "LOREM IPSUM, ".repeat(500);
+
+export const FIXED_STRING_VALUES = {
+  FIXED_VALUE_VLONG,
+  FIXED_VALUE_LONG,
+  FIXED_VALUE_SHORT,
+  FIXED_VALUE_VSHORT,
+};
